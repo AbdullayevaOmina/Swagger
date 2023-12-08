@@ -1,0 +1,8 @@
+body {
+	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUEo2WhQcD8zFl5JCGlaln2Xd60JnRqCKJug&usqp=CAU) center/cover  no-repeat;
+}
+
+#login-container {
+  background-color:  rgba(25, 5, 46, 0.5);
+	color: white;
+}

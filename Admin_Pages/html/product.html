@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ....... -->
+    <script>
+      let swaggerToken = localStorage.getItem("swaggerToken");
+      if (!swaggerToken) window.location.replace("./login.html");
+    </script>
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <!-- bootstrap css-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="../styles/products.css" /> -->
+    <!-- axios -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"
+      integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- bootstrap js-->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script defer src="../js/product.js"></script>
+    <title>Product</title>
+  </head>
+  <body>
+    <main class="container">
+      <button
+        type="button"
+        class="btn btn-success m-5"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        data-bs-whatever="@getbootstrap"
+      >
+        Add product
+      </button>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Add product
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form class="d-grid">
+                <label for="name">
+                  <h4>Product Name:</h4>
+                  <label for="uz" class="my-3">
+                    <p>Uz:</p>
+                    <input type="text" id="uz" class="w-100" />
+                  </label>
+                  <label for="ru" class="my-3">
+                    <p>Ru:</p>
+                    <input type="text" id="ru" class="w-100" />
+                  </label>
+                </label>
+
+                <label for="price" class="my-3">
+                  <h4>Price:</h4>
+                  <input type="text" id="price" class="w-100" />
+                </label>
+
+                <label for="color" class="my-5">
+                  <h4>Color:</h4>
+                  <label for="uz" class="my-3">
+                    <p>Uz:</p>
+                    <input type="text" id="uz" class="w-100" />
+                  </label>
+                  <label for="ru" class="my-3">
+                    <p>Ru:</p>
+                    <input type="text" id="ru" class="w-100" />
+                  </label>
+                </label>
+
+                <label for="descriptipon">
+                  <h4>Description:</h4>
+                  <label for="uz" class="my-3">
+                    <p>Uz:</p>
+                    <input type="text" id="uz" class="w-100" />
+                  </label>
+                  <label for="ru" class="my-3">
+                    <p>Ru:</p>
+                    <input type="text" id="ru" class="w-100" />
+                  </label>
+                </label>
+
+                <label for="img" class="my-3">
+                  <h4>Image URL :</h4>
+                  <input type="text" id="img" class="w-100" />
+                </label>
+
+                <label for="category" class="my-3 d-inline-flex gap-5">
+                  <h4>Select cbategory:</h4>
+                  <select id="category">
+                    <option value="moshina">Mashinalar</option>
+                    <option value="kitob">Kitoblar</option>
+                    <option value="gadjetlar">Gadjetlar</option>
+                    <option value="kiyim-kechak">Kiyim Kechaklar</option>
+                  </select>
+                </label>
+
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="nimadir" class="container d-flex flex-wrap gap-3"></div>
+    </main>
+  </body>
+</html>
