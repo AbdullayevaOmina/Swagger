@@ -39,6 +39,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       headers: headers,
     });
 
+    console.log(response.data);
+
     response.data.forEach((element, index) => {
       let card = `<div class="card my-3">
 			<div class="card-body d-flex justify-content-between">

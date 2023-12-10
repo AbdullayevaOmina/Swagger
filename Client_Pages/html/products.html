@@ -36,22 +36,41 @@
     <title>Client Products</title>
   </head>
   <body>
-    <main class="">
-      <form action="" class="my-5 container d-flex gap-2">
-        <input
-          type="text"
-          placeholder="Search product..."
-          class="form-control"
-          id="input"
-        />
-        <button type="submit" class="btn btn-primary">Search</button>
-      </form>
+    <nav class="navbar sticky-top mx-5">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white">PRODUCTS</a>
 
-      <div
-        id="nimadir"
-        class="mx-5 d-flex flex-wrap gap-5 justify-content-around"
-      >
+        <ul class="d-flex text-white mt-2 gap-5">
+          <li class="list-unstyled">
+            <a class="nav-link active" href="../html/clientLogin.html">Login page</a>
+          </li>
+          <li class="list-unstyled">
+            <a class="nav-link" href="../html/registerClient.html">Register page</a>
+          </li>
+          <li class="list-unstyled">
+            <a class="nav-link" href="../html/korzinka.html"><i class="fa-solid fa-cart-shopping text-danger"></i> Korzinka page</a>
+          </li>
+        </ul>
+
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search Product..."
+            aria-label="Search"
+            id="input"
+          />
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
       </div>
+    </nav>
+    <main class="mt-4">
+      <div
+        id="products"
+        class="mx-5 d-flex flex-wrap gap-5 justify-content-around"
+      ></div>
     </main>
     <footer class="mb-5"></footer>
   </body>
