@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(8, 17, 58);
+}
+
+img {
+  max-width: 250px;
+  min-width: 250px;
+  max-height: 200px;
+  min-height: 200px;
+}
+
+#input {
+  background-color: rgb(16, 16, 92);
+  color: white;
+  font-size: 20px;
+	::placeholder {
+		color: rgb(119, 115, 115);
+		opacity: 1;
+	}
+}
+
+
+.like {
+  cursor: pointer;
+  color: red;
+}
+.clr {
+  clear: both;
+}
+
+.card {
+  background-color: rgb(16, 16, 92);
+}
+
+.card:hover {
+  box-shadow: 1px 1px 15px 2px rgb(137, 137, 134);
+  transition: 0.3s ease-in-out;
+}

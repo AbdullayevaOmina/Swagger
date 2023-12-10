@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     const response = await axios.get("/products", {
       headers: headers,
     });
-    console.log(response);
 
     response.data.forEach((element) => {
       let card = `<div class="card my-3">
