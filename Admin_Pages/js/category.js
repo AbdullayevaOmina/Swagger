@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   const headers = {
     Authorization: `Bearer ${localStorage.getItem("swaggerToken")}`,
   };
+
   let form = document.querySelector("form");
-  let div = document.querySelector("#nimadir");
+  let tbody = document.querySelector("tbody");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -35,25 +36,21 @@ document.addEventListener("DOMContentLoaded", async function () {
   });
 
   try {
-    const response = await axios.get("/categories", {
-      headers: headers,
-    });
+    const response = await axios.get("/categories", { headers: headers });
 
     console.log(response.data);
 
     response.data.forEach((element, index) => {
-      let card = `<div class="card my-3">
-			<div class="card-body d-flex justify-content-between">
-			<p class="w-25"> ${index + 1}</p>
-			<h4 class="w-50"> uz: ${element.uz}</h4>
-			<h4 class="w-50"> ru: ${element.ru}</h4>
-			</div>
-			</div>`;
+      let tr = `<tr>
+                    <th scope="row">${index + 1}</th>
+                    <td>${element.uz}</td>
+                    <td>${element.ru}</td>
+                    <td><img class="img" src="${element.image}" alt=""></td>
+                    <td>${element._id}</td>
+                  </tr>`;
 
-      div.innerHTML += card;
+      tbody.innerHTML += tr;
     });
-
-    console.log(response);
   } catch (error) {
     console.error(error);
   }

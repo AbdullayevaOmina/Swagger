@@ -25,6 +25,7 @@
     />
     <!-- css -->
     <link rel="stylesheet" href="../styles/category.css" />
+    <link rel="stylesheet" href="../styles/products.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Categories | Admin Panel</title>
   </head>
@@ -60,7 +61,7 @@
           <li class="sidebar-list-item">
             <span class="material-icons-outlined">dashboard</span> Dashboard
           </li>
-          <li class="sidebar-list-item">
+          <li class="sidebar-list-item active">
             <a href="./products.html">
               <span class="material-icons-outlined">inventory_2</span> Products
             </a>
@@ -75,7 +76,7 @@
               <span class="material-icons-outlined">dvr</span> Orders
             </a>
           </li>
-          <li class="sidebar-list-item active">
+          <li class="sidebar-list-item">
             <a href="./category.html">
               <span class="material-icons-outlined">category</span> Categories
             </a>
@@ -87,8 +88,10 @@
       <main>
         <div class="d-flex justify-content-between">
           <div class="main-title">
-            <h2>CATEGORIES</h2>
+            <h2>PRODUCTS</h2>
           </div>
+
+          <!-- ::::::::::::::::::: CREATE PRODUCT ::::::::::::::::::: -->
           <button
             type="button"
             class="btn btn-success"
@@ -96,7 +99,7 @@
             data-bs-target="#exampleModal"
             data-bs-whatever="@getbootstrap"
           >
-            Create Category
+            Create Product
           </button>
           <div
             class="modal fade"
@@ -109,7 +112,7 @@
               <div class="modal-content bg-dark">
                 <div class="modal-header bg-dark">
                   <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    Create Category
+                    Create Product
                   </h1>
                   <button
                     type="button"
@@ -120,18 +123,62 @@
                 </div>
                 <div class="modal-body">
                   <form class="d-grid">
-                    <label for="uz" class="my-3">
-                      <h5>Uz:</h5>
-                      <input type="text" id="uz" class="w-100 px-2" />
+                    <label for="name">
+                      <h4>Product Name:</h4>
+                      <label for="uz" class="my-3">
+                        <p>Uz:</p>
+                        <input type="text" id="uz" class="w-100" />
+                      </label>
+                      <label for="ru" class="my-3">
+                        <p>Ru:</p>
+                        <input type="text" id="ru" class="w-100" />
+                      </label>
                     </label>
-                    <label for="ru" class="my-3">
-                      <h5>Ru:</h5>
-                      <input type="text" id="ru" class="w-100 px-2" />
+
+                    <label for="price" class="my-3">
+                      <h4>Price:</h4>
+                      <input type="text" id="price" class="w-100" />
                     </label>
+
+                    <label for="color" class="my-5">
+                      <h4>Color:</h4>
+                      <label for="uz" class="my-3">
+                        <p>Uz:</p>
+                        <input type="text" id="uz" class="w-100" />
+                      </label>
+                      <label for="ru" class="my-3">
+                        <p>Ru:</p>
+                        <input type="text" id="ru" class="w-100" />
+                      </label>
+                    </label>
+
+                    <label for="descriptipon">
+                      <h4>Description:</h4>
+                      <label for="uz" class="my-3">
+                        <p>Uz:</p>
+                        <input type="text" id="uz" class="w-100" />
+                      </label>
+                      <label for="ru" class="my-3">
+                        <p>Ru:</p>
+                        <input type="text" id="ru" class="w-100" />
+                      </label>
+                    </label>
+
                     <label for="img" class="my-3">
-                      <h5>Image URL :</h5>
-                      <input type="text" id="img" class="w-100 px-2" />
+                      <h4>Image URL :</h4>
+                      <input type="text" id="img" class="w-100" />
                     </label>
+
+                    <label for="category" class="my-3 d-inline-flex gap-5">
+                      <h4>Select cbategory:</h4>
+                      <select id="category">
+                        <option value="moshina">Mashinalar</option>
+                        <option value="kitob">Kitoblar</option>
+                        <option value="gadjetlar">Gadjetlar</option>
+                        <option value="kiyim-kechak">Kiyim Kechaklar</option>
+                      </select>
+                    </label>
+
                     <div class="modal-footer">
                       <button
                         type="button"
@@ -140,33 +187,26 @@
                       >
                         Close
                       </button>
-                      <button type="submit" class="btn btn-primary">
-                        Create
-                      </button>
+                      <button type="submit" class="btn btn-primary">Add</button>
                     </div>
                   </form>
                 </div>
               </div>
             </div>
           </div>
+          <!-- ::::::::::::::::::: CREATE PRODUCT ::::::::::::::::::: -->
         </div>
 
-        <table class="table table-dark table-striped my-5">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">UZ Name</th>
-              <th scope="col">RU Name</th>
-              <th scope="col">Image</th>
-              <th scope="col">ID</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+        <!-- :::::::::::::::::::::::: PRODUCTS ::::::::::::::::::::::: -->
+        <div
+          id="products"
+          class="mt-5 d-flex flex-wrap gap-5 justify-content-around"
+        ></div>
+        <!-- :::::::::::::::::::::::: PRODUCTS ::::::::::::::::::::::: -->
       </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/category.js"></script>
+    <script src="../js/products.js"></script>
   </body>
 </html>

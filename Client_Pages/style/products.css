@@ -1,8 +1,13 @@
-body, nav {
+body,
+nav {
   background-color: rgb(8, 17, 58);
 }
-nav{
+nav {
   border-bottom: 1px solid rgb(6, 10, 26);
+}
+
+nav ul li:hover {
+  color: chartreuse;
 }
 
 img {
@@ -15,7 +20,6 @@ img {
 #input {
   width: 400px;
 }
-
 
 .like {
   cursor: pointer;
