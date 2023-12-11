@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     Authorization: `Bearer ${swaggerToken}`,
   };
 
-  let usersSection = document.querySelector("#users");
+  let users = document.querySelector("tbody");
   let form = document.querySelector("form");
 
   form.addEventListener("submit", async (e) => {
@@ -38,22 +38,20 @@ document.addEventListener("DOMContentLoaded", async function () {
   });
 
   try {
-    const response = await axios.get("/users", {
-      headers,
-    });
-    console.log(response.data);
-    response.data.forEach((element, index) => {
-      let card = `<div class="card my-3 d-flex">
-			<div class="card-body">
-			<p>${index + 1}</p>
-			<h2>${element.name}</h2>
-			<p>${element.phoneNumber}</p>
-			</div>
-			</div>`;
+    const response = await axios.get("/users", { headers });
+    console.log(response);
 
-      usersSection.innerHTML += card;
+    response.data.forEach((element, index) => {
+      let user = `<tr>
+              <th scope="row">${index + 1}</th>
+              <td>${element.name}</td>
+              <td>${element.phoneNumber}</td>
+              <td>${element.password}</td>
+              <td>${element._id}</td>
+            </tr>`;
+
+      users.innerHTML += user;
     });
-    console.log(response.data);
   } catch (error) {
     console.error(error);
   }
